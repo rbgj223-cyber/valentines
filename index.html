@@ -3,140 +3,62 @@
 <head>
 <meta charset="UTF-8">
 <title>Ronnie ❤️ Summer</title>
-
 <style>
-body {
-    margin: 0;
-    font-family: Georgia, serif;
-    background: linear-gradient(#ffd6e8, #fff0f5);
-    text-align: center;
-    color: #5a1a2b;
-    overflow-x: hidden;
-}
-
-h1 {
-    margin-top: 50px;
-    font-size: 3em;
-}
-
-.flowers {
-    font-size: 3rem;
-    margin: 20px 0;
-}
-
-.counter {
-    font-size: 1.3em;
-    margin-top: 10px;
-    color: #b11235;
-    font-weight: bold;
-}
-
-.card {
-    background: white;
-    max-width: 600px;
-    margin: 40px auto;
-    padding: 30px;
-    border-radius: 20px;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
-}
-
-p {
-    font-size: 1.2em;
-    line-height: 1.6;
-}
-
-button {
-    margin-top: 20px;
-    padding: 12px 25px;
-    font-size: 1em;
-    border: none;
-    border-radius: 25px;
-    background: #ff4d6d;
-    color: white;
-    cursor: pointer;
-}
-
-#surprise {
-    display: none;
-    margin-top: 20px;
-    font-weight: bold;
-    color: #b11235;
-}
-
-/* Falling flowers */
-.flower {
-    position: fixed;
-    top: -10%;
-    font-size: 24px;
-    animation: fall linear infinite;
-    opacity: 0.8;
-}
-
-@keyframes fall {
-    to {
-        transform: translateY(110vh) rotate(360deg);
-    }
-}
+body { margin:0; font-family:Georgia, serif; background:linear-gradient(#ffd6e8,#fff0f5); text-align:center; color:#5a1a2b; overflow-x:hidden; }
+h1 { margin-top:50px; font-size:3em; }
+.flowers { font-size:3rem; margin:20px 0; }
+.counter { font-size:1.3em; margin-top:10px; color:#b11235; font-weight:bold; }
+.card { background:white; max-width:600px; margin:40px auto; padding:30px; border-radius:20px; box-shadow:0 10px 25px rgba(0,0,0,0.1); }
+p { font-size:1.2em; line-height:1.6; }
+button { margin-top:20px; padding:12px 25px; font-size:1em; border:none; border-radius:25px; background:#ff4d6d; color:white; cursor:pointer; }
+#surprise { display:none; margin-top:20px; font-weight:bold; color:#b11235; }
+.flower { position:fixed; top:-10%; font-size:24px; animation:fall linear infinite; opacity:0.8; }
+@keyframes fall { to { transform:translateY(110vh) rotate(360deg); } }
 </style>
 </head>
-
 <body>
 
 <h1>Happy Valentine’s Day, Summer ❤️</h1>
-
 <div class="flowers">🌸 🌹 🌷 💐 🌺</div>
-
 <div class="counter" id="counter"></div>
-
 <div class="card">
-    <p>
-        Dear <strong>Summer</strong>,<br><br>
-        From the moment <strong>we got together on April 8th, 2025</strong>,
-        my life changed in the most beautiful way.
-        Every laugh, every smile, and every moment with you means more to me
-        than I could ever explain.
-        You are my favorite person, my best friend, and my greatest love.
-        <br><br>
-        Forever yours,<br>
-        <strong>Ronnie ❤️</strong>
-    </p>
-
-    <button onclick="document.getElementById('surprise').style.display='block'">
-        Click for a surprise 💌
-    </button>
-
-    <div id="surprise">
-        I love you endlessly, Summer 💖
-    </div>
+<p>
+Dear <strong>Summer</strong>,<br><br>
+From the moment <strong>we got together on April 8th, 2025</strong>, my life changed in the most beautiful way.
+Every laugh, every smile, and every moment with you means more to me than I could ever explain.
+You are my favorite person, my best friend, and my greatest love.<br><br>
+Forever yours,<br><strong>Ronnie ❤️</strong>
+</p>
+<button onclick="document.getElementById('surprise').style.display='block'">
+Click for a surprise 💌
+</button>
+<div id="surprise">I love you endlessly, Summer 💖</div>
 </div>
 
 <script>
-// 💕 Day counter since April 8, 2025
+// Day counter
 const startDate = new Date("2025-04-08T00:00:00");
 const counter = document.getElementById("counter");
-
 function updateCounter() {
     const now = new Date();
     const diffTime = now - startDate;
-    const days = Math.floor(diffTime / (1000 * 60 * 60 * 24));
-    counter.textContent = `We’ve been together for ${days} days 💕`;
+    const days = Math.floor(diffTime / (1000*60*60*24));
+    counter.textContent = `We've been together for ${days} days 💕`;
 }
 updateCounter();
 setInterval(updateCounter, 60000);
 
-// 🌸 Falling flowers animation
-const flowers = ["🌸", "🌹", "🌷", "💐", "🌺"];
-
-setInterval(() => {
+// Falling flowers
+const flowers = ["🌸","🌹","🌷","💐","🌺"];
+setInterval(()=>{
     const flower = document.createElement("div");
-    flower.className = "flower";
-    flower.textContent = flowers[Math.floor(Math.random() * flowers.length)];
-    flower.style.left = Math.random() * 100 + "vw";
-    flower.style.animationDuration = (Math.random() * 3 + 4) + "s";
+    flower.className="flower";
+    flower.textContent = flowers[Math.floor(Math.random()*flowers.length)];
+    flower.style.left=Math.random()*100+"vw";
+    flower.style.animationDuration=(Math.random()*3+4)+"s";
     document.body.appendChild(flower);
-
-    setTimeout(() => flower.remove(), 8000);
-}, 300);
+    setTimeout(()=>flower.remove(),8000);
+},300);
 </script>
 
 </body>
