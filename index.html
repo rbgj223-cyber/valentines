@@ -20,3 +20,70 @@ h1 {
 
 .flowers {
     font-size: 3rem;
+    margin: 20px 0;
+}
+
+.card {
+    background: white;
+    max-width: 600px;
+    margin: 40px auto;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+
+p {
+    font-size: 1.2em;
+    line-height: 1.6;
+}
+
+button {
+    margin-top: 20px;
+    padding: 12px 25px;
+    font-size: 1em;
+    border: none;
+    border-radius: 25px;
+    background: #ff4d6d;
+    color: white;
+    cursor: pointer;
+}
+
+#surprise {
+    display: none;
+    margin-top: 20px;
+    font-weight: bold;
+    color: #b11235;
+}
+</style>
+</head>
+
+<body>
+
+<h1>Happy Valentine’s Day, Summer ❤️</h1>
+
+<div class="flowers">🌸 🌹 🌷 💐 🌺</div>
+
+<div class="card">
+    <p>
+        Dear <strong>Summer</strong>,<br><br>
+        From the moment <strong>we got together on April 8th, 2025</strong>,
+        my life changed in the most beautiful way.
+        Every laugh, every smile, and every moment with you means more to me
+        than I could ever explain.
+        You are my favorite person, my best friend, and my greatest love.
+        <br><br>
+        Forever yours,<br>
+        <strong>Ronnie ❤️</strong>
+    </p>
+
+    <button onclick="document.getElementById('surprise').style.display='block'">
+        Click for a surprise 💌
+    </button>
+
+    <div id="surprise">
+        I love you endlessly, Summer 💖
+    </div>
+</div>
+
+</body>
+</html>
